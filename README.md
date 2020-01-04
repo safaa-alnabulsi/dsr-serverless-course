@@ -128,11 +128,11 @@ To deactivate an active environment, use
     
 To create a new lambda and a role:
 
-    $ . scripts/setup.sh
+    $ . scripts/setup.sh function-name
 
 To deploy a lambda:
 
-    $ . scripts/deploy.sh
+    $ . scripts/deploy.sh function-name
     
 Note: to make a shell script executable, use:
 
