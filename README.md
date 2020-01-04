@@ -132,7 +132,7 @@ To create a new lambda and a role:
 
 To deploy a lambda:
 
-    $ . scripts/deploy.sh function-name
+    $ . scripts/deploy.sh function-name '{"key1": "value1 of key1"}'
     
 Note: to make a shell script executable, use:
 
