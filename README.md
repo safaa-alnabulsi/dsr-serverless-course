@@ -123,6 +123,21 @@ To deactivate an active environment, use
 
     $ aws lambda delete-function --function-name safaa-function-from-cli
 
+
+## Create & use lambda using aws-cli, all in one shell script
+    
+To create a new lambda and a role:
+
+    $ . scripts/setup.sh
+
+To deploy a lambda:
+
+    $ . scripts/deploy.sh
+    
+Note: to make a shell script executable, use:
+
+    $ chmod +x scripts/deploy.sh  
+    
 ## References
 - [aws-cli](https://github.com/aws/aws-cli#getting-started)
 - [Creating a role with the conosle](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
