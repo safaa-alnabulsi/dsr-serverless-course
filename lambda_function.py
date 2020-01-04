@@ -1,6 +1,3 @@
-import json
-
-print('Loading function')
 
 def lambda_handler(event, context):
 	print('inside the lambda function')

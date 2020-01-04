@@ -41,9 +41,14 @@ To deactivate an active environment, use
 
 ## Easy setup and deployment using shell scripts
     
- To learn more, follow this tutorial [05-create-lambda-with-aws-cli-and-shell-scripts.md](05-create-lambda-with-aws-cli-and-shell-scripts.md)
+ To learn more, follow this tutorial [05-create-lambda-with-aws-cli-and-shell-scripts.md](tutorials/05-create-lambda-with-aws-cli-and-shell-scripts.md)
   
+## Text to speech example, using boto3 (Python SDK) 
+   
+ To learn more, follow this tutorial [06-text-to-speech-lambda-boto3-and-polly.md](tutorials/06-text-to-speech-lambda-boto3-and-polly.md)
    
 ## References
-- [aws-cli](https://github.com/aws/aws-cli#getting-started)
+- [aws-cli docs](https://github.com/aws/aws-cli#getting-started)
+- [Boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Boto3 Polly, synthesize_speech](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.synthesize_speech)
 - [Creating a role with the conosle](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
