@@ -47,6 +47,10 @@ To deactivate an active environment, use
    
  To learn more, follow this tutorial [06-text-to-speech-lambda-boto3-and-polly.md](tutorials/06-text-to-speech-lambda-boto3-and-polly.md)
    
+## To clean the created lambda and infra
+
+    $ . scripts/clean.sh testpolly 
+
 ## References
 - [aws-cli docs](https://github.com/aws/aws-cli#getting-started)
 - [Boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
