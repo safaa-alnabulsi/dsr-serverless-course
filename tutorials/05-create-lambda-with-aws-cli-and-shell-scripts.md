@@ -4,10 +4,14 @@ To create a new lambda and a role:
 
     $ . scripts/setup.sh function-name
 
+![Screenshot](tutorials/architecture/setup-lambda.png)
+
 To deploy a lambda and invoke it:
 
     $ . scripts/deploy.sh function-name '{"key1": "value1 of key1"}'
     
+![Screenshot](tutorials/architecture/invoke-lambda.png)
+
 Note: to make a shell script executable, use:
 
     $ chmod +x scripts/deploy.sh  
