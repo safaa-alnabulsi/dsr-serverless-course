@@ -9,13 +9,22 @@ FUNCTION_NAME=$1
 zip -r my_lambda lambda_function_polly.py
 
 # create IAM role
-aws cloudformation deploy --template-file templates/iam-role.yaml --stack-name $STACK_ROLE_NAME --region eu-west-1 --capabilities CAPABILITY_NAMED_IAM
+aws cloudformation deploy --template-file templates/iam-role.yaml \
+                          --stack-name $STACK_ROLE_NAME \
+                          --region eu-west-1 \
+                          --capabilities CAPABILITY_NAMED_IAM
 
 # get the ARN of the IAM role
-ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' --out text)
+ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
+                                              --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' \
+                                              --out text)
 
 # create a new lambda function
-aws lambda create-function --function-name $FUNCTION_NAME --runtime python3.6 --handler lambda_function_polly.lambda_handler --role $ROLE_ARN --zip-file fileb://my_lambda.zip
+aws lambda create-function --function-name $FUNCTION_NAME \
+                           --runtime python3.6 \
+                           --handler lambda_function_polly.lambda_handler \
+                           --role $ROLE_ARN \
+                           --zip-file fileb://my_lambda.zip
 
 # clean the zip file
 rm my_lambda.zip

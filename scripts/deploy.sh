@@ -17,3 +17,6 @@ aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-
 
 # clean the zip file
 rm my_lambda.zip
+
+# clean the log file
+rm out
