@@ -10,13 +10,13 @@ FUNCTION_NAME=$1
 zip -r my_lambda lambda_function_polly.py
 
 # create IAM role
-aws cloudformation deploy --template-file cfn/iam-role.yaml --stack-name $STACK_ROLE_NAME --region eu-west-1 --capabilities CAPABILITY_NAMED_IAM
+aws cloudformation deploy --template-file templates/iam-role.yaml --stack-name $STACK_ROLE_NAME --region eu-west-1 --capabilities CAPABILITY_NAMED_IAM
 
 # get the ARN of the IAM role
 ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' --out text)
 
 # create s3 bucket
-aws cloudformation deploy --template-file cfn/s3-bucket.yaml --stack-name $STACK_BUCKET_NAME --region eu-west-1
+aws cloudformation deploy --template-file templates/s3-bucket.yaml --stack-name $STACK_BUCKET_NAME --region eu-west-1
 
 # create a new lambda function
 aws lambda create-function --function-name $FUNCTION_NAME --runtime python3.6 --handler lambda_function_polly.lambda_handler --role $ROLE_ARN --zip-file fileb://my_lambda.zip
