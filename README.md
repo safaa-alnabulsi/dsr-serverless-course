@@ -49,7 +49,7 @@ To deactivate an active environment, use
    
 ## To clean the created lambda and infra
 
-    $ . scripts/clean.sh testpolly 
+    $ . scripts/clean.sh function-name 
 
 ## References
 - [aws-cli docs](https://github.com/aws/aws-cli#getting-started)
