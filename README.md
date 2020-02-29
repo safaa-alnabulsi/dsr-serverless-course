@@ -1,22 +1,28 @@
 # Serverless Course
 
 ## Pre-requisites
+- git
 - conda
 - aws cloud account 
 
 ## Preparing your local env
 
-To create python3.6 virtual env, use
+Clone the github repo 
+
+    $ git clone git@github.com:safaa-alnabulsi/dsr-serverless-course.git
+    cd dsr-serverless-course
+    
+Create python3.6 virtual env, use
 
 	$ conda create -n myenvpy3.6 python=3.6
 	
 	
-To activate this environment, use
+Activate this environment, use
 
      $ conda activate myenvpy3.6
 
 
-To install needed libraries, use
+Install needed libraries, use
  
      $ pip install -r requirements.txt
      
@@ -34,20 +40,33 @@ To deactivate an active environment, use
 
      $ conda deactivate
 
+## Tutorials & Labs
 
-## Create & use lambda using aws-cli
+### Introduction
+
+ To learn more, follow this tutorial [00-intro.md](tutorials/00-intro.md)
+
+### AWS Console General Introduction
+
+ To learn more, follow this tutorial [01-aws-console-general-intro.md](tutorials/01-aws-console-general-intro.md)
+
+###  Create lambda from a blurprint using aws console
+
+ To learn more, follow this tutorial [02-create-lambda-from-blueprint-with-aws-console.md](tutorials/02-create-lambda-from-blueprint-with-aws-console.md)
+
+### Create lambda from scratch using aws console
  
- To learn more, follow this tutorial [04-create-lambda-with-aws-cli.md](tutorials/04-create-lambda-with-aws-cli.md)
+ To learn more, follow this tutorial [03-create-lambda-from-scratch-with-aws-console.md](tutorials/03-create-lambda-from-scratch-with-aws-console.md)
 
-## Easy setup and deployment using shell scripts
+### Easy setup and deployment using shell scripts
     
  To learn more, follow this tutorial [05-create-lambda-with-aws-cli-and-shell-scripts.md](tutorials/05-create-lambda-with-aws-cli-and-shell-scripts.md)
   
-## Text to speech example, using boto3 (Python SDK) 
+### Text to speech example, using boto3 (Python SDK) 
    
  To learn more, follow this tutorial [06-text-to-speech-lambda-boto3-and-polly.md](tutorials/06-text-to-speech-lambda-boto3-and-polly.md)
    
-## To clean the created lambda and infra
+### To clean the created lambda and infra
 
     $ . scripts/clean.sh function-name 
 
