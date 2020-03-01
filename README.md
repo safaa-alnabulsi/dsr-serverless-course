@@ -4,6 +4,7 @@
 - git
 - conda
 - aws cloud account 
+- configured cli
 
 ## Preparing your local env
 
@@ -39,6 +40,7 @@ Before using aws-cli, you need to tell it about your AWS credentials.
 To deactivate an active environment, use
 
      $ conda deactivate
+
 
 ## Tutorials & Labs
 
