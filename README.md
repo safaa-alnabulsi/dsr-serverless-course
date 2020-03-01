@@ -15,7 +15,7 @@ Clone the github repo
     
 Create python3.6 virtual env, use
 
-	$ conda create -n myenvpy3.6 python=3.6
+    $ conda create -n myenvpy3.6 python=3.6
 	
 	
 Activate this environment, use
@@ -28,14 +28,21 @@ Install needed libraries, use
      $ pip install -r requirements.txt
      
 
-Before using aws-cli, you need to tell it about your AWS credentials. 
+Before using aws-cli, you need to configure it with your AWS credentials.
+You can create a user in https://console.aws.amazon.com/iam/ and export the credentials csv.
+If the user name is `cli-user`, run the following:
 
-	$ aws configure
+	$ aws configure --profile cli-user
 	AWS Access Key ID: foo
 	AWS Secret Access Key: bar
 	Default region name [us-west-2]: eu-west-1
 	Default output format [None]: json
- 
+
+	$ export AWS_PROFILE=cli-user
+
+To test if you have access, run the following and you shouldn't see an error:
+	
+	$ aws s3 ls
     
 To deactivate an active environment, use
 
