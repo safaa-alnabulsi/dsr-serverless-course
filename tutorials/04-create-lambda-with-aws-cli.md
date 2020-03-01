@@ -8,7 +8,7 @@ $ zip -r my_lambda lambda_function.py
 2) Create an IAM Role for AWS Lambda, you need Admin user to do that:
 
 ```
-$ aws cloudformation deploy --template-file cfn/iam-role.yaml --stack-name slambda-iam-role --region eu-west-1 --capabilities CAPABILITY_NAMED_IAM
+$ aws cloudformation deploy --template-file templates/iam-role.yaml --stack-name slambda-iam-role --region eu-west-1 --capabilities CAPABILITY_NAMED_IAM
 ```
 
 2) To get the IAM Role Arn, use:
