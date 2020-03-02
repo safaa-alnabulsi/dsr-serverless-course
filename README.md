@@ -67,6 +67,10 @@ To deactivate an active environment, use
  
  To learn more, follow this tutorial [03-create-lambda-from-scratch-with-aws-console.md](tutorials/03-create-lambda-from-scratch-with-aws-console.md)
 
+### Create & use lambda using aws-cli
+    
+ To learn more, follow this tutorial [04-create-lambda-with-aws-cli.md](tutorials/04-create-lambda-with-aws-cli.md)
+
 ### Easy setup and deployment using shell scripts
     
  To learn more, follow this tutorial [05-create-lambda-with-aws-cli-and-shell-scripts.md](tutorials/05-create-lambda-with-aws-cli-and-shell-scripts.md)
@@ -75,10 +79,6 @@ To deactivate an active environment, use
    
  To learn more, follow this tutorial [06-text-to-speech-lambda-boto3-and-polly.md](tutorials/06-text-to-speech-lambda-boto3-and-polly.md)
    
-### To clean the created lambda and infra
-
-    $ . scripts/clean.sh function-name 
-
 ## References
 - [aws-cli docs](https://github.com/aws/aws-cli#getting-started)
 - [Boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
