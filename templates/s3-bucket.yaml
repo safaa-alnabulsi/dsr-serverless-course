@@ -5,7 +5,7 @@ Parameters:
   BucketName:
     Description: The s3 bucket name
     Type: String
-    Default: 'polly-audio-bucket'
+    Default: 'polly-audiofiles-bucket'
 
 Resources:
   Bucket:

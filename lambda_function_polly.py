@@ -1,7 +1,7 @@
 import boto3
 import os
 
-BUCKET_NAME='polly-audio-bucket'
+BUCKET_NAME='polly-audiofiles-bucket'
 
 def lambda_handler(event, context):
 	client = boto3.client('polly')
