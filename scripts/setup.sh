@@ -6,7 +6,7 @@ STACK_ROLE_NAME="slambda-iam-role"
 FUNCTION_NAME=$1
 
 # package the lambda code
-zip -r my_lambda lambda_function_polly.py
+zip -r my_lambda lambda_function.py
 
 # create IAM role
 aws cloudformation deploy --template-file templates/iam-role.yaml \
@@ -22,7 +22,7 @@ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
 # create a new lambda function
 aws lambda create-function --function-name $FUNCTION_NAME \
                            --runtime python3.6 \
-                           --handler lambda_function_polly.lambda_handler \
+                           --handler lambda_function.lambda_handler \
                            --role $ROLE_ARN \
                            --zip-file fileb://my_lambda.zip
 
