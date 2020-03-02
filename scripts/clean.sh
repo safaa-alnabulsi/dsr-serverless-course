@@ -2,7 +2,7 @@
 
 STACK_ROLE_NAME="slambda-iam-role"
 STACK_BUCKET_NAME="polly-audio-bucket-stack"
-BUCKET_NAME="polly-audio-bucket"
+BUCKET_NAME="polly-audiofiles-bucket"
 
 # get the value of the first parameter
 FUNCTION_NAME=$1
