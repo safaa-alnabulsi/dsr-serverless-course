@@ -2,10 +2,12 @@
 
 STACK_ROLE_NAME="polly-lambda-iam-role"
 STACK_BUCKET_NAME="polly-audio-bucket-stack"
-BUCKET_NAME="polly-audiofiles-bucket"
 
 # get the value of the first parameter
 FUNCTION_NAME=$1
+
+# get the value of the second parameter
+BUCKET_NAME=$2
 
 # clean the lambda function
 aws lambda delete-function --function-name $FUNCTION_NAME

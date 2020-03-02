@@ -18,4 +18,4 @@ Copy the url to your browser and download the file!
 
 Note: Don't forget to clean your stacks by executing:
 
-    $ . scripts/clean.sh function-name
+    $ . scripts/clean.sh function-name my-unique-bucket-name
