@@ -1,9 +1,9 @@
 import boto3
 import os
 
-BUCKET_NAME='polly-audiofiles-bucket'
 
 def lambda_handler(event, context):
+	BUCKET_NAME = event['bucket-name']
 	client = boto3.client('polly')
 	response = client.synthesize_speech(VoiceId='Joanna',
 										OutputFormat='mp3',

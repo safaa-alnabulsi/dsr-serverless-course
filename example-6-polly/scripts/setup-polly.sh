@@ -6,6 +6,9 @@ STACK_BUCKET_NAME="polly-audio-bucket-stack"
 # get the value of the first parameter
 FUNCTION_NAME=$1
 
+# get the value of the second parameter
+BUCKET_NAME=$2
+
 # package the lambda code
 zip -r my_lambda lambda_function_polly.py
 
@@ -21,7 +24,7 @@ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
                                               --out text)
 
 # create s3 bucket
-aws cloudformation deploy --template-file templates/s3-bucket.yaml --stack-name $STACK_BUCKET_NAME --region eu-west-1
+aws cloudformation deploy --template-file templates/s3-bucket.yaml --stack-name $STACK_BUCKET_NAME --parameter-overrides BucketName=$BUCKET_NAME --region eu-west-1
 
 # create a new lambda function
 aws lambda create-function --function-name $FUNCTION_NAME \
