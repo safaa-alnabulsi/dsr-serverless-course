@@ -7,7 +7,7 @@ def lambda_handler(event, context):
 	client = boto3.client('polly')
 	response = client.synthesize_speech(VoiceId='Joanna',
 										OutputFormat='mp3',
-										Text = 'Hello awesome people of Data science treat !')
+										Text = 'Hello awesome people of Data science Retreat!')
 
 	create_audio_file(response, 'speech.mp3')
 
