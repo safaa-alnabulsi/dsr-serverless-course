@@ -1,10 +1,17 @@
 # Serverless Course
 
 ## Pre-requisites
-- git
+
+- [Git](https://github.com/git-guides/install-git)
+    - macOS: `brew install git`
+    - Linux (Ubuntu): `sudo apt-get update && sudo apt-get install git-all` 
 - conda
-- aws cloud account 
-- configured cli
+    - [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html#) 
+    - [Linux (Ubuntu)](https://docs.anaconda.com/anaconda/install/linux/)
+
+## Creating AWS Account
+
+Follow the instructions in [this page](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 
 ## Preparing your local env
 
@@ -27,6 +34,12 @@ Install needed libraries, use
  
      $ pip install -r requirements.txt
      
+_Note:_ to deactivate an active environment, use
+
+     $ conda deactivate
+
+
+## Configuring your local CLI with AWS
 
 Before using aws-cli, you need to configure it with your AWS credentials.
 You can create a user in https://console.aws.amazon.com/iam/ and export the credentials csv.
@@ -44,11 +57,6 @@ To test if you have access, run the following and you shouldn't see an error:
 	
 	$ aws s3 ls
     
-To deactivate an active environment, use
-
-     $ conda deactivate
-
-
 ## Tutorials & Labs
 
 ### Introduction
