@@ -1,4 +1,4 @@
-# Serverless Course
+# DSR Serverless Course (AWS Lambda)
 
 ## Pre-requisites
 
