@@ -2,6 +2,7 @@
 1) Create an archive by zipping your code:
 
 ```
+$ cd example-4-hello-world-cli
 $ zip -r my_lambda lambda_function.py
 ```
 

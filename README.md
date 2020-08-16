@@ -22,12 +22,12 @@ Clone the github repo
     
 Create python3.6 virtual env, use
 
-    $ conda create -n myenvpy3.6 python=3.6
+    $ conda create -n dsr-serverless-py36 python=3.6 -y
 	
 	
 Activate this environment, use
 
-     $ conda activate myenvpy3.6
+     $ conda activate dsr-serverless-py36
 
 
 Install needed libraries, use
@@ -37,6 +37,9 @@ Install needed libraries, use
 _Note:_ to deactivate an active environment, use
 
      $ conda deactivate
+
+Intall `zip` command:  
+  - Ubuntu:  `sudo apt-get install -y zip`
 
 
 ## Configuring your local CLI with AWS
