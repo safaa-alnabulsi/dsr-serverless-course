@@ -1,6 +1,6 @@
 # Create & use lambda using aws-cli, all in one shell script
     
-    $ cd example-5-hello-world
+    $ cd example-5-hello-world-scripts
 
 To create a new lambda and a role:
 
@@ -10,7 +10,7 @@ To create a new lambda and a role:
 
 To deploy a lambda and invoke it:
 
-    $ . scripts/deploy.sh function-name '{"key1": "value1 of key1"}'
+    $ . scripts/deploy.sh function-name '{"key1": "my-value"}'
     
 ![Screenshot](architecture/invoke-lambda.png)
 

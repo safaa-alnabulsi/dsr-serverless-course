@@ -9,6 +9,7 @@ FUNCTION_NAME=$1
 zip -r my_lambda lambda_function.py
 
 # create IAM role
+echo "Creating the IAM Role"
 aws cloudformation deploy --template-file templates/iam-role.yaml \
                           --stack-name $STACK_ROLE_NAME \
                           --region eu-west-1 \
@@ -20,6 +21,7 @@ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
                                               --out text)
 
 # create a new lambda function
+echo "Creating the lambda function"
 aws lambda create-function --function-name $FUNCTION_NAME \
                            --runtime python3.6 \
                            --handler lambda_function.lambda_handler \

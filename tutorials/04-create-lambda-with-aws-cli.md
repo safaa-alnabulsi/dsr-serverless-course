@@ -14,8 +14,7 @@ $ aws cloudformation deploy --template-file templates/iam-role.yaml --stack-name
 
 2) To get the IAM Role Arn, use:
 ```
-$ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name slambda-iam-role --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' --out text)
-    $ echo $ROLE_ARN
+$ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name slambda-iam-role --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' --out text) && echo $ROLE_ARN
 ```
 
 3) Create a lambda:
