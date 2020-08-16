@@ -13,6 +13,7 @@ BUCKET_NAME=$2
 zip -r my_lambda lambda_function_polly.py
 
 # create IAM role
+echo "Creating IAM Role"
 aws cloudformation deploy --template-file templates/iam-role.yaml \
                           --stack-name $STACK_ROLE_NAME \
                           --region eu-west-1 \
@@ -24,9 +25,11 @@ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
                                               --out text)
 
 # create s3 bucket
+echo "Creating S3 Bucket"
 aws cloudformation deploy --template-file templates/s3-bucket.yaml --stack-name $STACK_BUCKET_NAME --parameter-overrides BucketName=$BUCKET_NAME --region eu-west-1
 
 # create a new lambda function
+echo "Creating lambda function"
 aws lambda create-function --function-name $FUNCTION_NAME \
                            --runtime python3.6 \
                            --handler lambda_function_polly.lambda_handler \

@@ -10,9 +10,11 @@ PAYLOAD=$2
 zip -r my_lambda_polly lambda_function_polly.py
 
 # update the lambda function after changing its code
+echo "Updating the lambda function code"
 aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://my_lambda_polly.zip
 
 # invoke the lambda, decode and show the logs
+echo "Invoking the lambda function"
 aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-type Tail --query 'LogResult' --output text |  base64 -D
 
 # clean the zip file
