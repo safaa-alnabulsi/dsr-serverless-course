@@ -22,3 +22,8 @@ Note: Don't forget to clean your stacks by executing:
 Note: to make a shell script executable, use:
 
     $ chmod +x scripts/deploy.sh  
+    
+
+## Takeaways:
+
+- Use Shell Script to automate the deployment. Automation!
