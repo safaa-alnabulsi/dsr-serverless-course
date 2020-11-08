@@ -40,6 +40,9 @@ _Note:_ to deactivate an active environment, use
 
 Intall `zip` command:  
   - Ubuntu:  `sudo apt-get install -y zip`
+  - Manjaro: `sudo pacman -S zip` 
+  
+  	Note: In case if you get any error while installing the package, try the command below and repeat the previous commands `sudo pacman -Rs zip` 
 
 
 ## Configuring your local CLI with AWS
