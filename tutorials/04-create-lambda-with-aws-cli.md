@@ -19,35 +19,35 @@ $ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name slambda-iam-role --
 
 3) Create a lambda:
 ```
-$ YOURNAME=$(whoami)
-$ aws lambda create-function --function-name $(YOURNAME)-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler  --role $ROLE_ARN --zip-file fileb://my_lambda.zip
+$ MY_NAME=$(whoami)
+$ aws lambda create-function --function-name $MY_NAME-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler  --role $ROLE_ARN --zip-file fileb://my_lambda.zip
 	 
-       {
-           "FunctionName": "yourname-function-from-cli",
-           "FunctionArn": "arn:aws:lambda:eu-west-1:410896695229:function:yourname-function-from-cli",
-           "Runtime": "python3.6",
-           "Role": "arn:aws:iam::410896695229:role/slambda-iam-role-LambdaExecutionRole-XL1IY6FM7DOJ",
-           "Handler": "lambda_function.handler",
-           "CodeSize": 395,
-           "Description": "",
-           "Timeout": 3,
-           "MemorySize": 128,
-           "LastModified": "2019-12-29T21:21:10.800+0000",
-           "CodeSha256": "32AGoVJBnBMZznrk04JmLuh6ADgtSca3iQ0VgB7+wVQ=",
-           "Version": "$LATEST",
-           "TracingConfig": {
-               "Mode": "PassThrough"
-           },
-           "RevisionId": "89647bd6-fa26-490c-a25b-4644c5b9d377",
-           "State": "Active",
-           "LastUpdateStatus": "Successful"
-       }
- ```    
+{
+    "FunctionName": "salnabulsi-function-from-cli",
+    "FunctionArn": "arn:aws:lambda:eu-west-1:434405979992:function:salnabulsi-function-from-cli",
+    "Runtime": "python3.6",
+    "Role": "arn:aws:iam::434405979992:role/slambda-iam-role-LambdaExecutionRole-RE7ACGPZ3XSX",
+    "Handler": "lambda_function.lambda_handler",
+    "CodeSize": 344,
+    "Description": "",
+    "Timeout": 3,
+    "MemorySize": 128,
+    "LastModified": "2020-11-08T22:17:58.516+0000",
+    "CodeSha256": "8vijcvNSB711jwkPFfPSqwSzzTNPS2eOqVrO3cBZoUA=",
+    "Version": "$LATEST",
+    "TracingConfig": {
+        "Mode": "PassThrough"
+    },
+    "RevisionId": "613ec6b1-9b18-41a8-86b0-8561e399245a",
+    "State": "Active",
+    "LastUpdateStatus": "Successful"
+}
+```    
  
 4) Invoke the lambda:
 
 ```
-$ aws lambda invoke --function-name $(YOURNAME)-function-from-cli out --log-type Tail
+$ aws lambda invoke --function-name $MY_NAME-function-from-cli out --log-type Tail
 	{
 	    "StatusCode": 200,
 	    "FunctionError": "Unhandled",
@@ -58,7 +58,7 @@ $ aws lambda invoke --function-name $(YOURNAME)-function-from-cli out --log-type
 	
 5) Notice the `out` file in your local machine, Check the logs locally:
 ```
-$ aws lambda invoke --function-name $(YOURNAME)-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  base64 -D
+$ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  Base64 -D
     START RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41 Version: $LATEST
     Loading function
     END RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41
@@ -69,9 +69,9 @@ $ aws lambda invoke --function-name $(YOURNAME)-function-from-cli  out --log-typ
 ```
     $ zip -r my_lambda lambda_function.py
     
-    $ aws lambda update-function-code --function-name $(YOURNAME)-function-from-cli --zip-file fileb://my_lambda.zip
+    $ aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
     
-    $ aws lambda invoke --function-name $(YOURNAME)-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  base64 -D
+    $ aws lambda invoke --function-name $MY_NAME-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  base64 -D
     START RequestId: 7c79341c-86ca-4066-b745-5975faedb446 Version: $LATEST
     inside the lambda function
     value1 =  value1 of key1
@@ -83,7 +83,7 @@ $ aws lambda invoke --function-name $(YOURNAME)-function-from-cli  out --log-typ
 
 ### to update the function code, use:
 ```
-    $ aws lambda update-function-code --function-name $(YOURNAME)-function-from-cli --zip-file fileb://my_lambda.zip
+    $ aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
 ```
 ### to clean up, use:
 ```
