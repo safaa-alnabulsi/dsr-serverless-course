@@ -26,4 +26,4 @@ Note: to make a shell script executable, use:
 
 ## Takeaways:
 
-- Use Shell Script to automate the deployment. Automation!
+- Use Shell Script to automate the deployment.
