@@ -19,7 +19,8 @@ $ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name slambda-iam-role --
 
 3) Create a lambda:
 ```
-$ aws lambda create-function --function-name yourname-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler  --role $ROLE_ARN --zip-file fileb://my_lambda.zip
+$ YOURNAME=$(whoami)
+$ aws lambda create-function --function-name $(YOURNAME)-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler  --role $ROLE_ARN --zip-file fileb://my_lambda.zip
 	 
        {
            "FunctionName": "yourname-function-from-cli",
@@ -46,7 +47,7 @@ $ aws lambda create-function --function-name yourname-function-from-cli --runtim
 4) Invoke the lambda:
 
 ```
-$ aws lambda invoke --function-name yourname-function-from-cli out --log-type Tail
+$ aws lambda invoke --function-name $(YOURNAME)-function-from-cli out --log-type Tail
 	{
 	    "StatusCode": 200,
 	    "FunctionError": "Unhandled",
@@ -57,7 +58,7 @@ $ aws lambda invoke --function-name yourname-function-from-cli out --log-type Ta
 	
 5) Notice the `out` file in your local machine, Check the logs locally:
 ```
-$ aws lambda invoke --function-name yourname-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  base64 -D
+$ aws lambda invoke --function-name $(YOURNAME)-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  base64 -D
     START RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41 Version: $LATEST
     Loading function
     END RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41
@@ -68,9 +69,9 @@ $ aws lambda invoke --function-name yourname-function-from-cli  out --log-type T
 ```
     $ zip -r my_lambda lambda_function.py
     
-    $ aws lambda update-function-code --function-name yourname-function-from-cli --zip-file fileb://my_lambda.zip
+    $ aws lambda update-function-code --function-name $(YOURNAME)-function-from-cli --zip-file fileb://my_lambda.zip
     
-    $ aws lambda invoke --function-name yourname-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  base64 -D
+    $ aws lambda invoke --function-name $(YOURNAME)-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  base64 -D
     START RequestId: 7c79341c-86ca-4066-b745-5975faedb446 Version: $LATEST
     inside the lambda function
     value1 =  value1 of key1
@@ -82,9 +83,9 @@ $ aws lambda invoke --function-name yourname-function-from-cli  out --log-type T
 
 ### to update the function code, use:
 ```
-    $ aws lambda update-function-code --function-name yourname-function-from-cli --zip-file fileb://my_lambda.zip
+    $ aws lambda update-function-code --function-name $(YOURNAME)-function-from-cli --zip-file fileb://my_lambda.zip
 ```
 ### to clean up, use:
 ```
-    $ aws lambda delete-function --function-name yourname-function-from-cli
+    $ aws lambda delete-function --function-name $(YOURNAME)-function-from-cli
 ```
