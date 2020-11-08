@@ -71,7 +71,7 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
     
     $ aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
     
-    $ aws lambda invoke --function-name $MY_NAME-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  base64 -D
+    $ aws lambda invoke --function-name $MY_NAME-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  Base64 -D
     START RequestId: 7c79341c-86ca-4066-b745-5975faedb446 Version: $LATEST
     inside the lambda function
     value1 =  value1 of key1
@@ -83,7 +83,7 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
 
 ### to update the function code, use:
 ```
-    $ aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
+    $ zip -r my_lambda lambda_function.py && aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
 ```
 ### to clean up, use:
 ```
