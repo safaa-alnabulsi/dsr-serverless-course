@@ -89,3 +89,7 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
 ```
     $ aws lambda delete-function --function-name $MY_NAME-function-from-cli
 ```
+
+## Takeaways:
+- Infra as Code (Cloudformation)
+- Usage of AWS CLI to create and update resources
