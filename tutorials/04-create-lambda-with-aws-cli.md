@@ -87,5 +87,5 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
 ```
 ### to clean up, use:
 ```
-    $ aws lambda delete-function --function-name $(YOURNAME)-function-from-cli
+    $ aws lambda delete-function --function-name $MY_NAME-function-from-cli
 ```
