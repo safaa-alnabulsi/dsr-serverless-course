@@ -95,8 +95,9 @@ To test if you have access, run the following and you shouldn't see an error:
    
 ## References
 - [aws-cli docs](https://github.com/aws/aws-cli#getting-started)
-- [Boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Python SDK - Boto3 docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
 - [Boto3 Polly, synthesize_speech](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.synthesize_speech)
-- [Creating a role with the conosle](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
+- [Creating a role with the console](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
 - [Cloudformation IAM role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html)
 - [Cloudformation S3 bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)
+- [AWS Lambda Pricing](https://aws.amazon.com/lambda/pricing/)
