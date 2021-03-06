@@ -15,7 +15,7 @@ aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb:
 
 # invoke the lambda, decode and show the logs
 echo "Invoking the lambda function"
-aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-type Tail --query 'LogResult' --output text |  base64 -D
+aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-type Tail --query 'LogResult' --output text |  base64 -d
 
 # clean the zip file
 rm my_lambda_polly.zip
