@@ -59,10 +59,30 @@ If the user name is `cli-user`, run the following:
 
 	$ export AWS_PROFILE=cli-user
 
+If you have an issue 
+
 To test if you have access, run the following and you shouldn't see an error:
 	
 	$ aws s3 ls
+
+Note:
+If you have an issue in using the aws command try the following way in doing the setup:
+
+    $ cat > ~/.aws/config
+    [default]
+    region=us-west-2
+    aws_access_key_id=foo
+    aws_secret_access_key=bar
     
+    $ aws configure
+    AWS Access Key ID [****************foo]:
+    AWS Secret Access Key [****************bar]:
+    Default region name [us-west-2]:
+    Default output format [None]:
+
+Note: 
+using the new AWS CLI version 2 Docker image might not work with all examples. 
+
 ## Tutorials & Labs
 
 ### Introduction
