@@ -23,6 +23,7 @@ Note: to make a shell script executable, use:
 
     $ chmod +x scripts/deploy.sh  
     
+Note: for linux, try changing the script and use `base64 -d`
 
 ## Takeaways:
 

@@ -80,6 +80,8 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
     REPORT RequestId: 7c79341c-86ca-4066-b745-5975faedb446	Duration: 0.22 ms	Billed Duration: 100 ms	Memory Size: 128 MB	Max Memory Used: 50 MB	Init Duration: 0.89 ms
 ``` 
 
+Note: for linux, try using `base64 -d`
+
 8. Check it all in the console.
 
 ### to update the function code, use:
