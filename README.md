@@ -6,8 +6,18 @@
     - macOS: `brew install git`
     - Linux (Ubuntu): `sudo apt-get update && sudo apt-get install git-all` 
 - conda
-    - [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html#) 
-    - [Linux (Ubuntu)](https://docs.anaconda.com/anaconda/install/linux/)
+   - [macOS](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html#) 
+    
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+            bash ~/miniconda.sh -b -p $HOME/miniconda
+            
+     For MacOS Catalina:
+     
+     If you are on macOS Catalina, the new default shell is zsh. You will instead need to run 
+     
+            source <path to conda>/bin/activate && conda init zsh.
+                 
+   - [Linux (Ubuntu)](https://docs.anaconda.com/anaconda/install/linux/)
 
 ## Creating AWS Account
 
