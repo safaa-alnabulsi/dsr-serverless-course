@@ -73,7 +73,17 @@ If you have an issue
 
 To test if you have access, run the following and you shouldn't see an error:
 	
-	$ aws s3 ls
+	$  aws iam get-user
+    {
+        "User": {
+        "Path": "/",
+        "UserName": "cli-user",
+        "UserId": "HASH",
+        "Arn": "arn:aws:iam::account-id:user/cli-user",
+        "CreateDate": "2021-06-06T17:59:12Z"
+      }
+    }
+
 
 Note:
 If you have an issue in using the aws command try the following way in doing the setup:

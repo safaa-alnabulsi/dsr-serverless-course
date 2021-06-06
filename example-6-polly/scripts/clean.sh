@@ -15,8 +15,5 @@ aws lambda delete-function --function-name $FUNCTION_NAME
 # clean the iam role
 aws cloudformation delete-stack --stack-name $STACK_ROLE_NAME
 
-# empty the s3 bucket
-aws s3 rm s3://$BUCKET_NAME/* --recursive
-
-# clean the s3 bucket
-aws cloudformation delete-stack --stack-name $STACK_BUCKET_NAME
+# empty the s3 bucket && clean the s3 bucket
+aws s3 rm s3://$BUCKET_NAME --recursive && aws cloudformation delete-stack --stack-name $STACK_BUCKET_NAME

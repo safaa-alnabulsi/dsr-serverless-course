@@ -4,20 +4,20 @@
 
 To create a new lambda and a role:
 
-    $ . scripts/setup.sh function-name
+    $ . scripts/setup.sh example-5-hello-world
 
 ![Screenshot](architecture/setup-lambda.png)
 
 To deploy a lambda and invoke it:
 
-    $ . scripts/deploy.sh function-name '{"key1": "my-value"}'
+    $ . scripts/deploy.sh example-5-hello-world '{"key1": "my-value"}'
     
 ![Screenshot](architecture/invoke-lambda.png)
 
 
 Note: Don't forget to clean your stacks by executing:
 
-    $ . scripts/clean.sh function-name
+    $ . scripts/clean.sh example-5-hello-world
     
 Note: to make a shell script executable, use:
 

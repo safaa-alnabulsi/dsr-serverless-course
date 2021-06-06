@@ -1,5 +1,10 @@
 # Create & use lambda using aws-cli
 
+
+```
+$ cd example-4-hello-world-cli
+```
+
 1. Create an IAM Role for AWS Lambda, you need Admin user to do that:
 
 ```
@@ -14,7 +19,6 @@ $ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name slambda-iam-role --
 3. Create an archive by zipping your code:
 
 ```
-$ cd example-4-hello-world-cli
 $ zip -r my_lambda lambda_function.py
 ```
 
@@ -45,19 +49,7 @@ $ aws lambda create-function --function-name $MY_NAME-function-from-cli --runtim
 }
 ```    
  
-5. Invoke the lambda:
-
-```
-$ aws lambda invoke --function-name $MY_NAME-function-from-cli out --log-type Tail
-	{
-	    "StatusCode": 200,
-	    "FunctionError": "Unhandled",
-	    "LogResult": "U1RBUlQgUmVxdWVzdElkOiA1MTdlY2U4Ni00OTRlLTQwNTQtOTYzZC01OWYzYmZlZWFiODkgVmVyc2lvbjogJExBVEVTVApVbmFibGUgdG8gaW1wb3J0IG1vZHVsZSAnbGFtYmRhX2Z1bmN0aW9uJzogTm8gbW9kdWxlIG5hbWVkICdsYW1iZGFfZnVuY3Rpb24nCgpFTkQgUmVxdWVzdElkOiA1MTdlY2U4Ni00OTRlLTQwNTQtOTYzZC01OWYzYmZlZWFiODkKUkVQT1JUIFJlcXVlc3RJZDogNTE3ZWNlODYtNDk0ZS00MDU0LTk2M2QtNTlmM2JmZWVhYjg5CUR1cmF0aW9uOiAwLjQwIG1zCUJpbGxlZCBEdXJhdGlvbjogMTAwIG1zCU1lbW9yeSBTaXplOiAxMjggTUIJTWF4IE1lbW9yeSBVc2VkOiA1MCBNQglJbml0IER1cmF0aW9uOiAwLjkxIG1zCQo=",
-	    "ExecutedVersion": "$LATEST"
-	}
-```
-	
-6. Notice the `out` file in your local machine, Check the logs locally:
+5. Invoke the lambda and notice the `out` file in your local machine folder. It contains the logs:
 ```
 $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  Base64 -D
     START RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41 Version: $LATEST
@@ -66,7 +58,7 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
     REPORT RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41	Duration: 0.27 ms	Billed Duration: 100 ms	Memory Size: 128 MB	Max Memory Used: 50 MB	Init Duration: 1.05 ms
 ```
 
-7. Change the code of the lambda to recieve inputs, and redeploy (Note that you have to repackage the lambda and update the code):
+6. Change the code of the lambda to recieve inputs, and redeploy (Note that you have to repackage the lambda and update the code):
 ```
     $ zip -r my_lambda lambda_function.py
     
@@ -82,7 +74,7 @@ $ aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type T
 
 Note: for linux, try using `base64 -d`
 
-8. Check it all in the console.
+7. Check it all in the console.
 
 ### to update the function code, use:
 ```
