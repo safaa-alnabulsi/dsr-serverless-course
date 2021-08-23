@@ -20,6 +20,7 @@ ROLE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_ROLE_NAME \
                                               --query 'Stacks[0].Outputs[?OutputKey==`LambdaExecutionRoleArn`].OutputValue' \
                                               --out text)
 
+# ROLE_ARN=arn:aws:iam::434405979992:role/slambda-iam-role-LambdaExecutionRole-LHBK748V44BE
 # create a new lambda function
 echo "Creating the lambda function"
 aws lambda create-function --function-name $FUNCTION_NAME \

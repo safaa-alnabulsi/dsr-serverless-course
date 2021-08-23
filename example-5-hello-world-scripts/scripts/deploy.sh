@@ -7,7 +7,7 @@ FUNCTION_NAME=$1
 PAYLOAD=$2
 
 # package the lambda code
-zip -r my_lambda lambda_function.py
+zip -r my_lambda *.py
 
 # update the lambda function after changing its code
 echo "Updating the lambda code"
