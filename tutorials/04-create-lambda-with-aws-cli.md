@@ -54,6 +54,7 @@ The expected output should look like:
 5. Invoke the lambda and notice the `out` file in your local machine folder. It contains the logs:
 ```
 aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  Base64 -D
+
 ```
 The expected output should look like: 
 ```
