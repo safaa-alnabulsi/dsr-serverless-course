@@ -26,7 +26,9 @@ zip -r my_lambda lambda_function.py
 ```
 MY_NAME=$(whoami)
 aws lambda create-function --function-name $MY_NAME-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler  --role $ROLE_ARN --zip-file fileb://my_lambda.zip
-	 
+```
+The expected output should look like: 
+```
 {
     "FunctionName": "salnabulsi-function-from-cli",
     "FunctionArn": "arn:aws:lambda:eu-west-1:434405979992:function:salnabulsi-function-from-cli",
@@ -52,6 +54,9 @@ aws lambda create-function --function-name $MY_NAME-function-from-cli --runtime 
 5. Invoke the lambda and notice the `out` file in your local machine folder. It contains the logs:
 ```
 aws lambda invoke --function-name $MY_NAME-function-from-cli  out --log-type Tail --query 'LogResult' --output text |  Base64 -D
+```
+The expected output should look like: 
+```
     START RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41 Version: $LATEST
     Loading function
     END RequestId: 524ed3c5-ce0c-4f69-b1ef-2526431e4e41
@@ -64,7 +69,11 @@ zip -r my_lambda lambda_function.py
     
 aws lambda update-function-code --function-name $MY_NAME-function-from-cli --zip-file fileb://my_lambda.zip
     
-aws lambda invoke --function-name $MY_NAME-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  Base64 -D
+aws lambda invoke --function-name $MY_NAME-function-from-cli --payload '{"key1": "value1 of key1"}' out --log-type Tail --query 'LogResult' --output text |  Base64 
+-D
+```
+The expected output should look like: 
+```
     START RequestId: 7c79341c-86ca-4066-b745-5975faedb446 Version: $LATEST
     inside the lambda function
     value1 =  value1 of key1
