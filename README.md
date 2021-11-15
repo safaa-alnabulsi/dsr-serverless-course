@@ -103,6 +103,24 @@ If you have an issue in using the aws command try the following way in doing the
 Note: 
 using the new AWS CLI version 2 Docker image might not work with all examples. 
 
+#### Notes for Window users: 
+To create an env variable in Windows:
+
+    set ROLE_ARNN="value"
+
+To create a variable which you use in your terminal
+
+    ROLE_ARNN="value"
+   
+To check its value
+
+    echo %ROLE_ARN%   on windows
+    
+So, to create Lambda For Windows (for tutorial 4,5,6)
+
+    set MY_NAME= Enter your name
+    aws lambda create-function --function-name %MY_NAME%-function-from-cli --runtime python3.6 --handler lambda_function.lambda_handler --role %ROLE_ARN% --zip-file fileb://my_lambda.zip
+
 ## Tutorials & Labs
 
 ### Introduction
