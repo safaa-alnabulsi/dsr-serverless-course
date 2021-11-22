@@ -13,9 +13,10 @@ zip -r my_lambda *.py
 echo "Updating the lambda code"
 aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://my_lambda.zip
 
+sleep 5
 # invoke the lambda, decode and show the logs
-echo "Invoking the lambda"
-aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-type Tail --query 'LogResult' --output text |  base64 -D
+echo "Invoking the lambda"git t
+aws lambda invoke --function-name $FUNCTION_NAME --payload "$PAYLOAD" out --log-type Tail --query 'LogResult' --output text |  base64 -d
 
 # clean the zip file
 rm my_lambda.zip
