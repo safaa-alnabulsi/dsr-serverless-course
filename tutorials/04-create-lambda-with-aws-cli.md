@@ -92,6 +92,8 @@ zip -r my_lambda lambda_function.py && aws lambda update-function-code --functio
 ### to clean up, use:
 ```
 aws lambda delete-function --function-name $MY_NAME-function-from-cli
+
+ aws cloudformation delete-stack --stack-name slambda-iam-role
 ```
 
 ## Takeaways:
